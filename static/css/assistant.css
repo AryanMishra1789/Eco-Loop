@@ -1,0 +1,857 @@
+/* ==========================================================
+   EcoLoop Design System
+========================================================== */
+
+:root{
+
+    --primary:#2563eb;
+    --primary-dark:#1d4ed8;
+    --primary-light:#eff6ff;
+
+    --success:#16a34a;
+    --warning:#f59e0b;
+    --danger:#dc2626;
+
+    --surface:#ffffff;
+    --background:#f4f7fb;
+
+    --text:#111827;
+    --text-secondary:#6b7280;
+
+    --border:#e5e7eb;
+
+    --radius:16px;
+
+    --shadow-sm:
+        0 2px 8px rgba(15,23,42,.05);
+
+    --shadow:
+        0 8px 30px rgba(15,23,42,.08);
+
+    --shadow-lg:
+        0 16px 45px rgba(15,23,42,.12);
+
+    --transition:.25s ease;
+
+}
+
+/* ==========================================================
+   Assistant Layout
+========================================================== */
+
+.assistant-page{
+
+    display:grid;
+
+    grid-template-columns:300px 1fr 360px;
+
+    gap:28px;
+
+    min-height:calc(100vh - 170px);
+
+    align-items:start;
+
+}
+
+/* ==========================================================
+   Panels
+========================================================== */
+
+.panel{
+
+    background:var(--surface);
+
+    border:1px solid var(--border);
+
+    border-radius:var(--radius);
+
+    box-shadow:var(--shadow);
+
+    overflow:hidden;
+
+    display:flex;
+
+    flex-direction:column;
+
+    transition:var(--transition);
+
+}
+
+.panel:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:var(--shadow-lg);
+
+}
+
+.panel-header{
+
+    padding:18px 24px;
+
+    background:#fafcff;
+
+    border-bottom:1px solid var(--border);
+
+    font-size:16px;
+
+    font-weight:700;
+
+    color:var(--text);
+
+    letter-spacing:.2px;
+
+}
+
+.panel-body{
+
+    padding:24px;
+
+}
+
+/* ==========================================================
+   Sidebar
+========================================================== */
+
+.assistant-sidebar{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:24px;
+
+}
+
+/* ==========================================================
+   Description
+========================================================== */
+
+.assistant-description{
+
+    font-size:14px;
+
+    color:var(--text-secondary);
+
+    line-height:1.8;
+
+    margin-bottom:18px;
+
+}
+
+/* ==========================================================
+   Divider
+========================================================== */
+
+.assistant-sidebar hr{
+
+    border:none;
+
+    border-top:1px solid var(--border);
+
+    margin:20px 0;
+
+}
+
+/* ==========================================================
+   Section Titles
+========================================================== */
+
+.assistant-sidebar h6{
+
+    font-size:14px;
+
+    font-weight:700;
+
+    color:var(--text);
+
+    margin-bottom:16px;
+
+    text-transform:uppercase;
+
+    letter-spacing:.8px;
+
+}
+
+/* ==========================================================
+   Prompt List
+========================================================== */
+
+.prompt-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
+
+}
+
+/* ==========================================================
+   Prompt Buttons
+========================================================== */
+
+.prompt-btn{
+
+    width:100%;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding:16px;
+
+    background:#fff;
+
+    border:1px solid var(--border);
+
+    border-radius:14px;
+
+    cursor:pointer;
+
+    transition:var(--transition);
+
+    font-size:14px;
+
+    font-weight:500;
+
+    color:var(--text);
+
+    text-align:left;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.prompt-btn::before{
+
+    content:"";
+
+    width:10px;
+
+    height:10px;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+    flex-shrink:0;
+
+}
+
+.prompt-btn:hover{
+
+    background:var(--primary-light);
+
+    border-color:var(--primary);
+
+    transform:translateX(5px);
+
+    box-shadow:var(--shadow-sm);
+
+}
+
+.prompt-btn:active{
+
+    transform:translateX(2px);
+
+}
+
+/* ==========================================================
+   AI Status Table
+========================================================== */
+
+.assistant-sidebar table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+.assistant-sidebar td{
+
+    padding:14px 4px;
+
+    border-bottom:1px solid var(--border);
+
+    font-size:14px;
+
+    color:var(--text);
+
+}
+
+.assistant-sidebar tr:last-child td{
+
+    border-bottom:none;
+
+}
+
+/* ==========================================================
+   Status Pills
+========================================================== */
+
+.status-success{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:6px;
+
+    padding:6px 14px;
+
+    border-radius:999px;
+
+    background:#dcfce7;
+
+    color:#15803d;
+
+    font-size:12px;
+
+    font-weight:700;
+
+}
+
+.status-success::before{
+
+    content:"";
+
+    width:8px;
+
+    height:8px;
+
+    border-radius:50%;
+
+    background:#22c55e;
+
+}
+
+/* ==========================================================
+   Buttons
+========================================================== */
+
+.btn-primary{
+
+    background:var(--primary);
+
+    border:none;
+
+    border-radius:12px;
+
+    font-weight:600;
+
+    transition:var(--transition);
+
+}
+
+.btn-primary:hover{
+
+    background:var(--primary-dark);
+
+    transform:translateY(-2px);
+
+    box-shadow:0 10px 25px rgba(37,99,235,.25);
+
+}
+
+/* ==========================================================
+   Tables
+========================================================== */
+
+.table{
+
+    margin-bottom:0;
+
+}
+
+.table td{
+
+    vertical-align:middle;
+
+}
+
+/* ==========================================================
+   Chat Panel
+========================================================== */
+
+.assistant-chat{
+
+    display:flex;
+
+    flex-direction:column;
+
+    min-width:0;
+
+}
+
+.chat-panel{
+
+    height:100%;
+
+}
+
+/* ==========================================================
+   Chat Messages
+========================================================== */
+
+.chat-messages{
+
+    flex:1;
+
+    overflow-y:auto;
+
+    background:var(--background);
+
+    padding:28px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:22px;
+
+}
+
+/* ==========================================================
+   Individual Message
+========================================================== */
+
+.message{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:14px;
+
+    animation:fadeUp .25s ease;
+
+}
+
+.message.user{
+
+    flex-direction:row-reverse;
+
+}
+
+/* ==========================================================
+   Avatar
+========================================================== */
+
+.message-avatar{
+
+    width:46px;
+
+    height:46px;
+
+    border-radius:14px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    flex-shrink:0;
+
+    font-size:13px;
+
+    font-weight:700;
+
+    color:white;
+
+    box-shadow:0 6px 16px rgba(0,0,0,.12);
+
+}
+
+.message.ai .message-avatar{
+
+    background:linear-gradient(
+        135deg,
+        #2563eb,
+        #1d4ed8
+    );
+
+}
+
+.message.user .message-avatar{
+
+    background:linear-gradient(
+        135deg,
+        #334155,
+        #0f172a
+    );
+
+}
+
+/* ==========================================================
+   Message Bubble
+========================================================== */
+
+.message-content{
+
+    max-width:78%;
+
+    background:white;
+
+    border:1px solid var(--border);
+
+    border-radius:18px;
+
+    padding:18px 20px;
+
+    font-size:14px;
+
+    line-height:1.8;
+
+    color:var(--text);
+
+    white-space:pre-wrap;
+
+    box-shadow:0 4px 14px rgba(0,0,0,.05);
+
+}
+
+.message.ai .message-content{
+
+    border-radius:18px 18px 18px 6px;
+
+}
+
+.message.user .message-content{
+
+    background:#1e293b;
+
+    color:white;
+
+    border:none;
+
+    border-radius:18px 18px 6px 18px;
+
+}
+
+/* ==========================================================
+   Input Area
+========================================================== */
+
+.chat-input-area{
+
+    background:white;
+
+    border-top:1px solid var(--border);
+
+    padding:22px;
+
+}
+
+.chat-input-area textarea{
+
+    width:100%;
+
+    resize:none;
+
+    min-height:110px;
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+    padding:16px;
+
+    font-size:14px;
+
+    transition:.25s;
+
+    background:#fafcff;
+
+}
+
+.chat-input-area textarea:focus{
+
+    outline:none;
+
+    border-color:var(--primary);
+
+    background:white;
+
+    box-shadow:0 0 0 4px rgba(37,99,235,.12);
+
+}
+
+/* ==========================================================
+   Send Button
+========================================================== */
+
+.chat-actions{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    margin-top:18px;
+
+}
+
+#sendMessage{
+
+    min-width:130px;
+
+    height:46px;
+
+    border-radius:12px;
+
+    font-weight:600;
+
+    letter-spacing:.3px;
+
+}
+
+/* ==========================================================
+   Right Panel
+========================================================== */
+
+.assistant-results{
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+/* ==========================================================
+   Tool Output
+========================================================== */
+
+#toolOutput{
+
+    background:#0f172a;
+
+    color:#e2e8f0;
+
+    border:1px solid #1e293b;
+
+    border-radius:14px;
+
+    padding:20px;
+
+    min-height:650px;
+
+    margin:0;
+
+    overflow:auto;
+
+    font-family:
+        Consolas,
+        Monaco,
+        "Courier New",
+        monospace;
+
+    font-size:13px;
+
+    line-height:1.8;
+
+    white-space:pre-wrap;
+
+    box-shadow:
+        inset 0 0 0 1px rgba(255,255,255,.03);
+
+}
+
+/* ==========================================================
+   Scrollbars
+========================================================== */
+
+.chat-messages::-webkit-scrollbar,
+#toolOutput::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+.chat-messages::-webkit-scrollbar-track,
+#toolOutput::-webkit-scrollbar-track{
+
+    background:transparent;
+
+}
+
+.chat-messages::-webkit-scrollbar-thumb,
+#toolOutput::-webkit-scrollbar-thumb{
+
+    background:#cbd5e1;
+
+    border-radius:999px;
+
+}
+
+.chat-messages::-webkit-scrollbar-thumb:hover,
+#toolOutput::-webkit-scrollbar-thumb:hover{
+
+    background:#94a3b8;
+
+}
+
+/* ==========================================================
+   Loading Bubble
+========================================================== */
+
+.typing-indicator{
+
+    display:flex;
+
+    gap:6px;
+
+    padding:8px 0;
+
+}
+
+.typing-indicator span{
+
+    width:8px;
+
+    height:8px;
+
+    border-radius:50%;
+
+    background:#94a3b8;
+
+    animation:bounce 1.2s infinite;
+
+}
+
+.typing-indicator span:nth-child(2){
+
+    animation-delay:.2s;
+
+}
+
+.typing-indicator span:nth-child(3){
+
+    animation-delay:.4s;
+
+}
+
+/* ==========================================================
+   Animations
+========================================================== */
+
+@keyframes bounce{
+
+    0%,80%,100%{
+
+        transform:scale(.8);
+
+        opacity:.5;
+
+    }
+
+    40%{
+
+        transform:scale(1.2);
+
+        opacity:1;
+
+    }
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(10px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ==========================================================
+   Responsive
+========================================================== */
+
+@media (max-width:1400px){
+
+    .assistant-page{
+
+        grid-template-columns:280px 1fr;
+
+    }
+
+    .assistant-results{
+
+        grid-column:1 / -1;
+
+    }
+
+    #toolOutput{
+
+        min-height:320px;
+
+    }
+
+}
+
+@media (max-width:992px){
+
+    .assistant-page{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .assistant-sidebar{
+
+        order:2;
+
+    }
+
+    .assistant-chat{
+
+        order:1;
+
+    }
+
+    .assistant-results{
+
+        order:3;
+
+    }
+
+}
+
+@media (max-width:768px){
+
+    .chat-messages{
+
+        padding:18px;
+
+    }
+
+    .message-content{
+
+        max-width:92%;
+
+    }
+
+    .panel-body{
+
+        padding:18px;
+
+    }
+
+}

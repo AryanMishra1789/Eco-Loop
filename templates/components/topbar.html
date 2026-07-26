@@ -1,0 +1,83 @@
+<header class="topbar">
+
+    <div class="topbar-left">
+
+        <div class="page-header">
+
+            <h2 class="page-title">
+
+                {% block page_title %}
+                Dashboard
+                {% endblock %}
+
+            </h2>
+
+            <div class="breadcrumb-text">
+
+                EcoLoop
+                <span>/</span>
+
+                {% block breadcrumb %}
+                Dashboard
+                {% endblock %}
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="topbar-right">
+
+        <div class="search-box">
+
+            <i class="bi bi-search"></i>
+
+            <input
+                type="text"
+                placeholder="Search..."
+                autocomplete="off">
+
+        </div>
+
+        <button class="topbar-btn">
+
+            <i class="bi bi-bell"></i>
+
+        </button>
+
+        <button class="topbar-btn">
+
+            <i class="bi bi-question-circle"></i>
+
+        </button>
+
+        <div class="user-profile">
+
+            <div class="user-avatar">
+
+                AM
+
+            </div>
+
+            <div class="user-details">
+
+                <div class="user-name">
+
+                    Administrator
+
+                </div>
+
+                <div class="user-role">
+
+                    Energy Manager
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>

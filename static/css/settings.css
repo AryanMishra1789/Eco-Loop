@@ -1,0 +1,266 @@
+/* ==========================================================
+   Settings Layout
+========================================================== */
+
+.settings-page {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 24px;
+
+}
+
+/* ==========================================================
+   Panels
+========================================================== */
+
+.panel {
+
+    background: #ffffff;
+
+    border: 1px solid var(--border-color);
+
+    border-radius: var(--radius);
+
+    overflow: hidden;
+
+}
+
+.panel-header {
+
+    padding: 16px 22px;
+
+    border-bottom: 1px solid var(--border-color);
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    background: #ffffff;
+
+}
+
+.panel-body {
+
+    padding: 22px;
+
+}
+
+/* ==========================================================
+   Two Column Layout
+========================================================== */
+
+.dashboard-row {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 24px;
+
+}
+
+/* ==========================================================
+   Forms
+========================================================== */
+
+.form-label {
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: var(--text-secondary);
+
+    margin-bottom: 8px;
+
+}
+
+.form-control,
+.form-select {
+
+    height: 44px;
+
+}
+
+/* ==========================================================
+   Status Badges
+========================================================== */
+
+.status-success {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 100px;
+
+    padding: 6px 14px;
+
+    border-radius: 20px;
+
+    background: rgba(25,135,84,.12);
+
+    color: var(--success);
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+}
+
+.status-warning {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 100px;
+
+    padding: 6px 14px;
+
+    border-radius: 20px;
+
+    background: rgba(245,158,11,.15);
+
+    color: var(--warning);
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+}
+
+.status-danger {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 100px;
+
+    padding: 6px 14px;
+
+    border-radius: 20px;
+
+    background: rgba(220,53,69,.12);
+
+    color: var(--danger);
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+}
+
+/* ==========================================================
+   Table
+========================================================== */
+
+.table {
+
+    margin-bottom: 0;
+
+}
+
+.table thead th {
+
+    background: #f8f9fb;
+
+    color: var(--text-secondary);
+
+    border-bottom: 1px solid var(--border-color);
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    padding: 16px 20px;
+
+}
+
+.table tbody td {
+
+    padding: 16px 20px;
+
+    vertical-align: middle;
+
+    font-size: 14px;
+
+}
+
+.table-hover tbody tr:hover {
+
+    background: #fafbfc;
+
+}
+
+/* ==========================================================
+   Save Button
+========================================================== */
+
+#saveSettings {
+
+    min-width: 180px;
+
+}
+
+/* ==========================================================
+   Card Hover
+========================================================== */
+
+.panel {
+
+    transition: .2s;
+
+}
+
+.panel:hover {
+
+    box-shadow: var(--shadow-sm);
+
+}
+
+/* ==========================================================
+   Responsive
+========================================================== */
+
+@media (max-width: 992px) {
+
+    .dashboard-row {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .settings-page {
+
+        gap: 18px;
+
+    }
+
+    .panel-body {
+
+        padding: 18px;
+
+    }
+
+    .table {
+
+        min-width: 700px;
+
+    }
+
+}

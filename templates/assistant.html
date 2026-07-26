@@ -1,0 +1,280 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}AI Assistant{% endblock %}
+
+{% block page_title %}
+AI Assistant
+{% endblock %}
+
+{% block breadcrumb %}
+AI Assistant
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/assistant.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<div class="assistant-page">
+
+    <!-- ===========================
+         Left Panel
+    ============================ -->
+
+    <div class="assistant-sidebar">
+
+        <div class="panel">
+
+            <div class="panel-header">
+
+                AI Assistant
+
+            </div>
+
+            <div class="panel-body">
+
+                <p class="assistant-description">
+
+                    Interact with the EcoLoop AI Agent to run simulations,
+                    analyze EnergyPlus results, optimize HVAC settings,
+                    and receive intelligent recommendations.
+
+                </p>
+
+                <hr>
+
+                <h6 class="mb-3">
+
+                    Suggested Prompts
+
+                </h6>
+
+                <div class="prompt-list">
+
+                    <button class="prompt-btn">
+
+                        Analyze the latest simulation
+
+                    </button>
+
+                    <button class="prompt-btn">
+
+                        Run an energy simulation
+
+                    </button>
+
+                    <button class="prompt-btn">
+
+                        Reduce HVAC energy consumption
+
+                    </button>
+
+                    <button class="prompt-btn">
+
+                        Optimize lighting usage
+
+                    </button>
+
+                    <button class="prompt-btn">
+
+                        Show sustainability recommendations
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="panel">
+
+            <div class="panel-header">
+
+                AI Status
+
+            </div>
+
+            <div class="panel-body">
+
+                <table class="table">
+
+                    <tbody>
+
+                    <tr>
+
+                        <td>Planner</td>
+
+                        <td>
+
+                            <span class="status-success">
+
+                                Online
+
+                            </span>
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Runtime</td>
+
+                        <td>
+
+                            <span class="status-success">
+
+                                Active
+
+                            </span>
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Dispatcher</td>
+
+                        <td>
+
+                            <span class="status-success">
+
+                                Ready
+
+                            </span>
+
+                        </td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Executor</td>
+
+                        <td>
+
+                            <span class="status-success">
+
+                                Available
+
+                            </span>
+
+                        </td>
+
+                    </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ===========================
+         Chat Panel
+    ============================ -->
+
+    <div class="assistant-chat">
+
+        <div class="panel chat-panel">
+
+            <div class="panel-header">
+
+                Conversation
+
+            </div>
+
+            <div
+                id="chatMessages"
+                class="chat-messages">
+
+                <div class="message ai">
+
+                    <div class="message-avatar">
+
+                        AI
+
+                    </div>
+
+                    <div class="message-content">
+
+                        Hello! I can help you run EnergyPlus simulations,
+                        analyze results, and recommend energy optimization
+                        strategies. How can I assist you today?
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="chat-input-area">
+
+                <textarea
+                    id="chatInput"
+                    class="form-control"
+                    rows="3"
+                    placeholder="Ask EcoLoop AI..."></textarea>
+
+                <div class="chat-actions">
+
+                    <button
+                        id="sendMessage"
+                        class="btn btn-primary">
+
+                        Send
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ===========================
+         Execution Panel
+    ============================ -->
+
+    <div class="assistant-results">
+
+        <div class="panel">
+
+            <div class="panel-header">
+
+                Tool Execution
+
+            </div>
+
+            <div class="panel-body">
+
+                <pre id="toolOutput">
+
+Waiting for AI request...
+
+                </pre>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
+
+{% block js %}
+
+<script src="{{ url_for('static', filename='js/assistant.js') }}"></script>
+
+{% endblock %}

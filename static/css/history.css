@@ -1,0 +1,286 @@
+/* ==========================================================
+   History Layout
+========================================================== */
+
+.history-page {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 24px;
+
+}
+
+/* ==========================================================
+   Panels
+========================================================== */
+
+.panel {
+
+    background: #ffffff;
+
+    border: 1px solid var(--border-color);
+
+    border-radius: var(--radius);
+
+    overflow: hidden;
+
+}
+
+.panel-header {
+
+    padding: 16px 22px;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    border-bottom: 1px solid var(--border-color);
+
+    background: #ffffff;
+
+}
+
+.panel-body {
+
+    padding: 22px;
+
+}
+
+/* ==========================================================
+   Filter Section
+========================================================== */
+
+.form-control,
+.form-select {
+
+    height: 44px;
+
+}
+
+#refreshHistory {
+
+    height: 44px;
+
+}
+
+/* ==========================================================
+   Table
+========================================================== */
+
+.table {
+
+    margin-bottom: 0;
+
+}
+
+.table thead th {
+
+    background: #f8f9fb;
+
+    border-bottom: 1px solid var(--border-color);
+
+    color: var(--text-secondary);
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    padding: 16px 18px;
+
+}
+
+.table tbody td {
+
+    padding: 16px 18px;
+
+    vertical-align: middle;
+
+    font-size: 14px;
+
+}
+
+.table-hover tbody tr:hover {
+
+    background: #fafbfc;
+
+}
+
+/* ==========================================================
+   Status Badges
+========================================================== */
+
+.status-success,
+.status-running,
+.status-failed {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 90px;
+
+    padding: 6px 14px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+}
+
+.status-success {
+
+    background: rgba(25,135,84,.12);
+
+    color: var(--success);
+
+}
+
+.status-running {
+
+    background: rgba(245,158,11,.15);
+
+    color: var(--warning);
+
+}
+
+.status-failed {
+
+    background: rgba(220,53,69,.12);
+
+    color: var(--danger);
+
+}
+
+/* ==========================================================
+   Action Buttons
+========================================================== */
+
+.action-buttons {
+
+    display: flex;
+
+    gap: 8px;
+
+}
+
+.action-btn {
+
+    width: 36px;
+
+    height: 36px;
+
+    border: 1px solid var(--border-color);
+
+    background: white;
+
+    border-radius: 6px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    cursor: pointer;
+
+    transition: .2s;
+
+}
+
+.action-btn:hover {
+
+    background: #f8f9fb;
+
+}
+
+.action-btn i {
+
+    font-size: 15px;
+
+}
+
+/* ==========================================================
+   Details Panel
+========================================================== */
+
+.detail-box {
+
+    min-height: 220px;
+
+    padding: 18px;
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 8px;
+
+    background: #fafbfc;
+
+    white-space: pre-wrap;
+
+    line-height: 1.7;
+
+    color: var(--text-primary);
+
+    overflow-y: auto;
+
+}
+
+/* ==========================================================
+   Run Counter
+========================================================== */
+
+#historyCount {
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+}
+
+/* ==========================================================
+   Empty State
+========================================================== */
+
+.text-center {
+
+    padding: 32px !important;
+
+    color: var(--text-muted);
+
+}
+
+/* ==========================================================
+   Responsive
+========================================================== */
+
+@media (max-width: 992px) {
+
+    .panel-body {
+
+        padding: 18px;
+
+    }
+
+    .table {
+
+        min-width: 900px;
+
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .history-page {
+
+        gap: 18px;
+
+    }
+
+}

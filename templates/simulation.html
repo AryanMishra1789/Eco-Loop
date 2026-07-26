@@ -1,0 +1,314 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}Simulation{% endblock %}
+
+{% block page_title %}
+Simulation
+{% endblock %}
+
+{% block breadcrumb %}
+Simulation
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/simulation.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<div class="simulation-page">
+
+    <!-- ===========================
+         Configuration
+    ============================ -->
+
+    <div class="panel">
+
+        <div class="panel-header">
+
+            Simulation Configuration
+
+        </div>
+
+        <div class="panel-body">
+
+            <div class="row">
+
+                <div class="col-md-6 mb-3">
+
+                    <label class="form-label">
+
+                        Building Name
+
+                    </label>
+
+                    <input
+                        id="buildingName"
+                        class="form-control"
+                        value="Honeywell Office">
+
+                </div>
+
+                <div class="col-md-6 mb-3">
+
+                    <label class="form-label">
+
+                        Simulation Name
+
+                    </label>
+
+                    <input
+                        id="simulationName"
+                        class="form-control"
+                        value="Baseline Analysis">
+
+                </div>
+
+                <div class="col-md-6 mb-3">
+
+                    <label class="form-label">
+
+                        Weather File
+
+                    </label>
+
+                    <select
+                        id="weatherFile"
+                        class="form-select">
+
+                        <option>Default Weather</option>
+
+                    </select>
+
+                </div>
+
+                <div class="col-md-6 mb-3">
+
+                    <label class="form-label">
+
+                        Simulation Period
+
+                    </label>
+
+                    <select
+                        id="simulationPeriod"
+                        class="form-select">
+
+                        <option>1 Day</option>
+                        <option>1 Week</option>
+                        <option>1 Month</option>
+                        <option selected>1 Year</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ===========================
+         Parameters
+    ============================ -->
+
+    <div class="dashboard-row">
+
+        <div class="panel">
+
+            <div class="panel-header">
+
+                Building Parameters
+
+            </div>
+
+            <div class="panel-body">
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+
+                        Occupancy
+
+                    </label>
+
+                    <input
+                        id="occupancy"
+                        type="number"
+                        class="form-control"
+                        value="120">
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+
+                        Floor Area (m²)
+
+                    </label>
+
+                    <input
+                        id="floorArea"
+                        type="number"
+                        class="form-control"
+                        value="2500">
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+
+                        Number of Floors
+
+                    </label>
+
+                    <input
+                        id="floors"
+                        type="number"
+                        class="form-control"
+                        value="4">
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="panel">
+
+            <div class="panel-header">
+
+                HVAC Parameters
+
+            </div>
+
+            <div class="panel-body">
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+
+                        Cooling Setpoint (°C)
+
+                    </label>
+
+                    <input
+                        id="coolingSetpoint"
+                        type="number"
+                        class="form-control"
+                        value="24">
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+
+                        Heating Setpoint (°C)
+
+                    </label>
+
+                    <input
+                        id="heatingSetpoint"
+                        type="number"
+                        class="form-control"
+                        value="20">
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+
+                        Ventilation Rate
+
+                    </label>
+
+                    <input
+                        id="ventilation"
+                        type="number"
+                        class="form-control"
+                        value="10">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ===========================
+         Execute
+    ============================ -->
+
+    <div class="panel">
+
+        <div class="panel-header">
+
+            Execute Simulation
+
+        </div>
+
+        <div class="panel-body d-flex justify-content-between align-items-center">
+
+            <div>
+
+                <strong>Status</strong>
+
+                <div id="simulationStatus"
+                     class="text-muted">
+
+                    Ready to run
+
+                </div>
+
+            </div>
+
+            <button
+                id="startSimulation"
+                class="btn btn-primary">
+
+                Start Simulation
+
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- ===========================
+         Output
+    ============================ -->
+
+    <div class="panel">
+
+        <div class="panel-header">
+
+            Simulation Output
+
+        </div>
+
+        <div class="panel-body">
+
+            <pre id="simulationOutput">
+
+Waiting for simulation...
+
+            </pre>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
+
+{% block js %}
+<script src="{{ url_for('static', filename='js/simulation.js') }}"></script>
+{% endblock %}

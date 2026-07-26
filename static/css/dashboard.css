@@ -1,0 +1,299 @@
+/* ==========================================================
+   Dashboard Layout
+========================================================== */
+
+.dashboard-grid {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 24px;
+
+}
+
+/* ==========================================================
+   KPI Cards
+========================================================== */
+
+.kpi-section {
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+
+}
+
+.kpi-card {
+
+    background: #ffffff;
+
+    border: 1px solid var(--border-color);
+
+    border-radius: var(--radius);
+
+    padding: 22px;
+
+    transition: .2s;
+
+}
+
+.kpi-card:hover {
+
+    box-shadow: var(--shadow);
+
+}
+
+.kpi-title {
+
+    font-size: 13px;
+
+    color: var(--text-secondary);
+
+    text-transform: uppercase;
+
+    letter-spacing: .5px;
+
+    margin-bottom: 12px;
+
+}
+
+.kpi-value {
+
+    font-size: 34px;
+
+    font-weight: 700;
+
+    color: var(--text-primary);
+
+    line-height: 1;
+
+}
+
+.kpi-footer {
+
+    margin-top: 14px;
+
+    font-size: 13px;
+
+    color: var(--text-muted);
+
+}
+
+/* ==========================================================
+   Dashboard Rows
+========================================================== */
+
+.dashboard-row {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 24px;
+
+}
+
+/* ==========================================================
+   Panels
+========================================================== */
+
+.panel {
+
+    background: #ffffff;
+
+    border: 1px solid var(--border-color);
+
+    border-radius: var(--radius);
+
+    overflow: hidden;
+
+}
+
+.panel-header {
+
+    padding: 16px 22px;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    border-bottom: 1px solid var(--border-color);
+
+    background: #ffffff;
+
+}
+
+.panel-body {
+
+    padding: 22px;
+
+}
+
+/* ==========================================================
+   Charts
+========================================================== */
+
+canvas {
+
+    width: 100% !important;
+
+    height: 320px !important;
+
+}
+
+/* ==========================================================
+   Tables
+========================================================== */
+
+.table {
+
+    margin-bottom: 0;
+
+}
+
+.table thead th {
+
+    background: #f8f9fb;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    color: var(--text-secondary);
+
+    border-bottom: 1px solid var(--border-color);
+
+}
+
+.table tbody td {
+
+    font-size: 14px;
+
+    color: var(--text-primary);
+
+}
+
+/* ==========================================================
+   Status Badges
+========================================================== */
+
+.status-success {
+
+    display: inline-block;
+
+    padding: 5px 12px;
+
+    border-radius: 20px;
+
+    background: rgba(25,135,84,.12);
+
+    color: var(--success);
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+}
+
+.status-warning {
+
+    display: inline-block;
+
+    padding: 5px 12px;
+
+    border-radius: 20px;
+
+    background: rgba(245,158,11,.12);
+
+    color: var(--warning);
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+}
+
+.status-danger {
+
+    display: inline-block;
+
+    padding: 5px 12px;
+
+    border-radius: 20px;
+
+    background: rgba(220,53,69,.12);
+
+    color: var(--danger);
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+}
+
+/* ==========================================================
+   Buttons
+========================================================== */
+
+#runSimulation {
+
+    min-width: 180px;
+
+}
+
+/* ==========================================================
+   Empty State
+========================================================== */
+
+.text-center {
+
+    padding: 32px !important;
+
+    color: var(--text-muted);
+
+}
+
+/* ==========================================================
+   Responsive
+========================================================== */
+
+@media (max-width: 1200px) {
+
+    .kpi-section {
+
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .dashboard-row {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .kpi-section {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .kpi-value {
+
+        font-size: 28px;
+
+    }
+
+    canvas {
+
+        height: 260px !important;
+
+    }
+
+}

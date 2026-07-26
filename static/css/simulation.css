@@ -1,0 +1,214 @@
+/* ==========================================================
+   Simulation Layout
+========================================================== */
+
+.simulation-page {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 24px;
+
+}
+
+/* ==========================================================
+   Panels
+========================================================== */
+
+.panel {
+
+    background: #ffffff;
+
+    border: 1px solid var(--border-color);
+
+    border-radius: var(--radius);
+
+    overflow: hidden;
+
+}
+
+.panel-header {
+
+    padding: 16px 22px;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    border-bottom: 1px solid var(--border-color);
+
+    background: #ffffff;
+
+}
+
+.panel-body {
+
+    padding: 22px;
+
+}
+
+/* ==========================================================
+   Two Column Layout
+========================================================== */
+
+.dashboard-row {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 24px;
+
+}
+
+/* ==========================================================
+   Forms
+========================================================== */
+
+.form-label {
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: var(--text-secondary);
+
+    margin-bottom: 8px;
+
+}
+
+.form-control,
+.form-select {
+
+    height: 44px;
+
+}
+
+/* ==========================================================
+   Execute Section
+========================================================== */
+
+#simulationStatus {
+
+    margin-top: 6px;
+
+    font-size: 14px;
+
+}
+
+#startSimulation {
+
+    min-width: 180px;
+
+}
+
+/* ==========================================================
+   Output Console
+========================================================== */
+
+#simulationOutput {
+
+    background: #111827;
+
+    color: #d1d5db;
+
+    border-radius: 8px;
+
+    padding: 20px;
+
+    min-height: 320px;
+
+    max-height: 500px;
+
+    overflow-y: auto;
+
+    font-family: Consolas, Monaco, monospace;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+    margin: 0;
+
+    white-space: pre-wrap;
+
+    word-break: break-word;
+
+}
+
+/* ==========================================================
+   Status Styles
+========================================================== */
+
+.status-ready {
+
+    color: var(--text-secondary);
+
+}
+
+.status-running {
+
+    color: var(--warning);
+
+    font-weight: 600;
+
+}
+
+.status-success {
+
+    color: var(--success);
+
+    font-weight: 600;
+
+}
+
+.status-error {
+
+    color: var(--danger);
+
+    font-weight: 600;
+
+}
+
+/* ==========================================================
+   Loading Button
+========================================================== */
+
+.btn-loading {
+
+    opacity: .7;
+
+    cursor: not-allowed;
+
+}
+
+/* ==========================================================
+   Responsive
+========================================================== */
+
+@media (max-width: 992px) {
+
+    .dashboard-row {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .panel-body {
+
+        padding: 18px;
+
+    }
+
+    #simulationOutput {
+
+        min-height: 250px;
+
+    }
+
+}

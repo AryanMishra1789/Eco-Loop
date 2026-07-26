@@ -1,0 +1,224 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}Simulation History{% endblock %}
+
+{% block page_title %}
+Simulation History
+{% endblock %}
+
+{% block breadcrumb %}
+Simulation History
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/history.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<div class="history-page">
+
+    <!-- ===========================
+         Filters
+    ============================ -->
+
+    <div class="panel">
+
+        <div class="panel-header">
+
+            Search & Filters
+
+        </div>
+
+        <div class="panel-body">
+
+            <div class="row g-3">
+
+                <div class="col-lg-4">
+
+                    <input
+                        id="searchInput"
+                        type="text"
+                        class="form-control"
+                        placeholder="Search Run ID or Building">
+
+                </div>
+
+                <div class="col-lg-3">
+
+                    <select
+                        id="statusFilter"
+                        class="form-select">
+
+                        <option value="">All Status</option>
+                        <option>Completed</option>
+                        <option>Running</option>
+                        <option>Failed</option>
+
+                    </select>
+
+                </div>
+
+                <div class="col-lg-3">
+
+                    <input
+                        id="dateFilter"
+                        type="date"
+                        class="form-control">
+
+                </div>
+
+                <div class="col-lg-2 d-grid">
+
+                    <button
+                        id="refreshHistory"
+                        class="btn btn-primary">
+
+                        Refresh
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ===========================
+         History Table
+    ============================ -->
+
+    <div class="panel">
+
+        <div class="panel-header d-flex justify-content-between align-items-center">
+
+            <span>Simulation Runs</span>
+
+            <span id="historyCount"
+                  class="text-muted">
+
+                0 Runs
+
+            </span>
+
+        </div>
+
+        <div class="panel-body p-0">
+
+            <div class="table-responsive">
+
+                <table class="table table-hover align-middle">
+
+                    <thead>
+
+                    <tr>
+
+                        <th>Run ID</th>
+
+                        <th>Simulation</th>
+
+                        <th>Building</th>
+
+                        <th>Status</th>
+
+                        <th>Execution Time</th>
+
+                        <th>Date</th>
+
+                        <th>Actions</th>
+
+                    </tr>
+
+                    </thead>
+
+                    <tbody id="historyTable">
+
+                        <tr>
+
+                            <td colspan="7"
+                                class="text-center">
+
+                                No simulations available.
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ===========================
+         Run Details
+    ============================ -->
+
+    <div class="panel">
+
+        <div class="panel-header">
+
+            Selected Simulation Details
+
+        </div>
+
+        <div class="panel-body">
+
+            <div class="row">
+
+                <div class="col-lg-6">
+
+                    <h6 class="mb-3">
+
+                        AI Analysis
+
+                    </h6>
+
+                    <div id="analysisPanel"
+                         class="detail-box">
+
+                        Select a simulation to view its AI analysis.
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-6">
+
+                    <h6 class="mb-3">
+
+                        Recommendations
+
+                    </h6>
+
+                    <div id="recommendationPanel"
+                         class="detail-box">
+
+                        Recommendations will appear here.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
+
+{% block js %}
+
+<script src="{{ url_for('static', filename='js/history.js') }}"></script>
+
+{% endblock %}

@@ -1,0 +1,380 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}Settings{% endblock %}
+
+{% block page_title %}
+Settings
+{% endblock %}
+
+{% block breadcrumb %}
+Settings
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/settings.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<div class="settings-page">
+
+    <!-- ==========================================
+         General Settings
+    =========================================== -->
+
+    <div class="panel">
+
+        <div class="panel-header">
+
+            General Settings
+
+        </div>
+
+        <div class="panel-body">
+
+            <div class="row">
+
+                <div class="col-md-6 mb-3">
+
+                    <label class="form-label">
+
+                        Organization
+
+                    </label>
+
+                    <input
+                        id="organization"
+                        class="form-control"
+                        value="Honeywell">
+
+                </div>
+
+                <div class="col-md-6 mb-3">
+
+                    <label class="form-label">
+
+                        Default Building
+
+                    </label>
+
+                    <input
+                        id="defaultBuilding"
+                        class="form-control"
+                        value="Honeywell Office">
+
+                </div>
+
+                <div class="col-md-6 mb-3">
+
+                    <label class="form-label">
+
+                        Time Zone
+
+                    </label>
+
+                    <select
+                        id="timezone"
+                        class="form-select">
+
+                        <option selected>Asia/Kolkata</option>
+                        <option>UTC</option>
+                        <option>America/New_York</option>
+                        <option>Europe/London</option>
+
+                    </select>
+
+                </div>
+
+                <div class="col-md-6 mb-3">
+
+                    <label class="form-label">
+
+                        Theme
+
+                    </label>
+
+                    <select
+                        id="theme"
+                        class="form-select">
+
+                        <option selected>Light</option>
+                        <option>Dark</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ==========================================
+         AI Configuration
+    =========================================== -->
+
+    <div class="dashboard-row">
+
+        <div class="panel">
+
+            <div class="panel-header">
+
+                AI Configuration
+
+            </div>
+
+            <div class="panel-body">
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+
+                        LLM Model
+
+                    </label>
+
+                    <input
+                        id="llmModel"
+                        class="form-control"
+                        value="phi3:mini">
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+
+                        Temperature
+
+                    </label>
+
+                    <input
+                        id="temperature"
+                        type="number"
+                        step="0.1"
+                        min="0"
+                        max="1"
+                        class="form-control"
+                        value="0.2">
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+
+                        Request Timeout (seconds)
+
+                    </label>
+
+                    <input
+                        id="timeout"
+                        type="number"
+                        class="form-control"
+                        value="180">
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="panel">
+
+            <div class="panel-header">
+
+                EnergyPlus Configuration
+
+            </div>
+
+            <div class="panel-body">
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+
+                        Weather Directory
+
+                    </label>
+
+                    <input
+                        id="weatherDirectory"
+                        class="form-control"
+                        value="/EnergyPlus/weather">
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+
+                        Simulation Output
+
+                    </label>
+
+                    <input
+                        id="outputDirectory"
+                        class="form-control"
+                        value="/EnergyPlus/output">
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+
+                        Parallel Simulations
+
+                    </label>
+
+                    <input
+                        id="parallelRuns"
+                        type="number"
+                        class="form-control"
+                        value="2">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ==========================================
+         Service Status
+    =========================================== -->
+
+    <div class="panel">
+
+        <div class="panel-header">
+
+            System Status
+
+        </div>
+
+        <div class="panel-body p-0">
+
+            <table class="table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>Service</th>
+                        <th>Status</th>
+                        <th>Version</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+
+                        <td>Flask API</td>
+
+                        <td>
+
+                            <span class="status-success">
+
+                                Online
+
+                            </span>
+
+                        </td>
+
+                        <td>1.0</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>PostgreSQL</td>
+
+                        <td>
+
+                            <span class="status-success">
+
+                                Connected
+
+                            </span>
+
+                        </td>
+
+                        <td>18</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>EnergyPlus</td>
+
+                        <td>
+
+                            <span class="status-success">
+
+                                Available
+
+                            </span>
+
+                        </td>
+
+                        <td>24.x</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td>Ollama</td>
+
+                        <td>
+
+                            <span class="status-success">
+
+                                Running
+
+                            </span>
+
+                        </td>
+
+                        <td>Latest</td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+    <!-- ==========================================
+         Save
+    =========================================== -->
+
+    <div class="d-flex justify-content-end">
+
+        <button
+            id="saveSettings"
+            class="btn btn-primary">
+
+            Save Settings
+
+        </button>
+
+    </div>
+
+</div>
+
+{% endblock %}
+
+{% block js %}
+
+<script src="{{ url_for('static', filename='js/settings.js') }}"></script>
+
+{% endblock %}

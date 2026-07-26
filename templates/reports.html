@@ -1,0 +1,273 @@
+{% extends "layouts/base.html" %}
+
+{% block title %}Reports{% endblock %}
+
+{% block page_title %}
+Reports
+{% endblock %}
+
+{% block breadcrumb %}
+Reports
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet"
+      href="{{ url_for('static', filename='css/reports.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<div class="reports-page">
+
+    <!-- ======================================
+         KPI Summary
+    ======================================= -->
+
+    <section class="kpi-section">
+
+        <div class="kpi-card">
+
+            <div class="kpi-title">
+
+                Total Energy
+
+            </div>
+
+            <div class="kpi-value"
+                 id="totalEnergy">
+
+                --
+
+            </div>
+
+            <div class="kpi-footer">
+
+                kWh
+
+            </div>
+
+        </div>
+
+        <div class="kpi-card">
+
+            <div class="kpi-title">
+
+                Estimated Cost
+
+            </div>
+
+            <div class="kpi-value"
+                 id="estimatedCost">
+
+                --
+
+            </div>
+
+            <div class="kpi-footer">
+
+                Monthly
+
+            </div>
+
+        </div>
+
+        <div class="kpi-card">
+
+            <div class="kpi-title">
+
+                CO₂ Reduction
+
+            </div>
+
+            <div class="kpi-value"
+                 id="co2Reduction">
+
+                --
+
+            </div>
+
+            <div class="kpi-footer">
+
+                kg
+
+            </div>
+
+        </div>
+
+        <div class="kpi-card">
+
+            <div class="kpi-title">
+
+                Energy Savings
+
+            </div>
+
+            <div class="kpi-value"
+                 id="energySavings">
+
+                --
+
+            </div>
+
+            <div class="kpi-footer">
+
+                %
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ======================================
+         Charts
+    ======================================= -->
+
+    <div class="dashboard-row">
+
+        <div class="panel">
+
+            <div class="panel-header">
+
+                Monthly Energy Consumption
+
+            </div>
+
+            <div class="panel-body">
+
+                <canvas id="energyReportChart"></canvas>
+
+            </div>
+
+        </div>
+
+        <div class="panel">
+
+            <div class="panel-header">
+
+                Energy Breakdown
+
+            </div>
+
+            <div class="panel-body">
+
+                <canvas id="breakdownChart"></canvas>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ======================================
+         AI Summary
+    ======================================= -->
+
+    <div class="panel">
+
+        <div class="panel-header">
+
+            AI Executive Summary
+
+        </div>
+
+        <div class="panel-body">
+
+            <div id="executiveSummary">
+
+                No report generated yet.
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- ======================================
+         Report Table
+    ======================================= -->
+
+    <div class="panel">
+
+        <div class="panel-header d-flex justify-content-between align-items-center">
+
+            <span>
+
+                Report Details
+
+            </span>
+
+            <div>
+
+                <button
+                    id="exportPdf"
+                    class="btn btn-outline-secondary">
+
+                    <i class="bi bi-file-earmark-pdf"></i>
+
+                    Export PDF
+
+                </button>
+
+                <button
+                    id="exportCsv"
+                    class="btn btn-primary">
+
+                    <i class="bi bi-download"></i>
+
+                    Export CSV
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="panel-body p-0">
+
+            <table class="table table-hover">
+
+                <thead>
+
+                <tr>
+
+                    <th>Metric</th>
+
+                    <th>Value</th>
+
+                    <th>Unit</th>
+
+                </tr>
+
+                </thead>
+
+                <tbody id="reportTable">
+
+                    <tr>
+
+                        <td colspan="3"
+                            class="text-center">
+
+                            No report available.
+
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
+
+{% block js %}
+
+<script src="{{ url_for('static', filename='js/reports.js') }}"></script>
+
+{% endblock %}

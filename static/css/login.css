@@ -1,0 +1,292 @@
+/* ==========================================================
+   Login Page
+========================================================== */
+
+.login-wrapper {
+
+    min-height: calc(100vh - 70px);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 40px;
+
+    background: #f4f6f9;
+
+}
+
+/* ==========================================================
+   Login Card
+========================================================== */
+
+.login-card {
+
+    width: 100%;
+
+    max-width: 460px;
+
+    background: #ffffff;
+
+    border: 1px solid var(--border-color);
+
+    border-radius: 12px;
+
+    padding: 36px;
+
+    box-shadow: var(--shadow);
+
+}
+
+/* ==========================================================
+   Header
+========================================================== */
+
+.login-header {
+
+    text-align: center;
+
+    margin-bottom: 30px;
+
+}
+
+.logo {
+
+    width: 72px;
+
+    height: 72px;
+
+    margin: 0 auto 18px;
+
+    border-radius: 50%;
+
+    background: var(--primary);
+
+    color: #ffffff;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 34px;
+
+}
+
+.login-header h2 {
+
+    font-size: 30px;
+
+    font-weight: 700;
+
+    margin-bottom: 8px;
+
+    color: var(--text-primary);
+
+}
+
+.login-header p {
+
+    color: var(--text-secondary);
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    margin: 0;
+
+}
+
+/* ==========================================================
+   Form
+========================================================== */
+
+.form-label {
+
+    font-weight: 600;
+
+    font-size: 13px;
+
+    color: var(--text-secondary);
+
+    margin-bottom: 8px;
+
+}
+
+.form-control {
+
+    height: 46px;
+
+    border-radius: 8px;
+
+}
+
+.form-control:focus {
+
+    box-shadow: none;
+
+    border-color: var(--primary);
+
+}
+
+/* ==========================================================
+   Remember / Forgot
+========================================================== */
+
+.form-check-label {
+
+    font-size: 14px;
+
+}
+
+.forgot-link {
+
+    font-size: 14px;
+
+    text-decoration: none;
+
+    color: var(--primary);
+
+}
+
+.forgot-link:hover {
+
+    text-decoration: underline;
+
+}
+
+/* ==========================================================
+   Buttons
+========================================================== */
+
+#loginButton,
+#demoButton {
+
+    height: 46px;
+
+    font-weight: 600;
+
+}
+
+#demoButton {
+
+    border: 1px solid var(--border-color);
+
+}
+
+/* ==========================================================
+   Footer
+========================================================== */
+
+.login-footer {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 12px;
+
+    margin-top: 20px;
+
+}
+
+.status-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    font-size: 13px;
+
+    color: var(--text-secondary);
+
+}
+
+.status-dot {
+
+    width: 10px;
+
+    height: 10px;
+
+    border-radius: 50%;
+
+}
+
+.status-dot.success {
+
+    background: #22c55e;
+
+}
+
+.status-dot.warning {
+
+    background: #f59e0b;
+
+}
+
+.status-dot.error {
+
+    background: #ef4444;
+
+}
+
+/* ==========================================================
+   Alert
+========================================================== */
+
+.alert {
+
+    font-size: 14px;
+
+    margin-bottom: 18px;
+
+}
+
+/* ==========================================================
+   Divider
+========================================================== */
+
+hr {
+
+    margin: 28px 0 20px;
+
+    border-color: var(--border-color);
+
+}
+
+/* ==========================================================
+   Responsive
+========================================================== */
+
+@media (max-width: 768px) {
+
+    .login-wrapper {
+
+        padding: 20px;
+
+    }
+
+    .login-card {
+
+        padding: 28px 22px;
+
+    }
+
+    .login-header h2 {
+
+        font-size: 26px;
+
+    }
+
+    .login-footer {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}

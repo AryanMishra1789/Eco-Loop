@@ -1,0 +1,83 @@
+<aside class="sidebar">
+
+    <div class="sidebar-logo">
+
+        <div>
+
+            <h4>EcoLoop</h4>
+
+            <span>Energy Intelligence Platform</span>
+
+        </div>
+
+    </div>
+
+    <nav class="sidebar-nav">
+
+        <a href="/dashboard"
+           class="{% if request.endpoint == 'dashboard' %}active{% endif %}">
+
+            <i class="bi bi-grid-1x2"></i>
+
+            <span>Dashboard</span>
+
+        </a>
+
+        <a href="/simulation"
+           class="{% if request.endpoint == 'simulation' %}active{% endif %}">
+
+            <i class="bi bi-cpu"></i>
+
+            <span>Simulation</span>
+
+        </a>
+
+        <a href="/assistant"
+           class="{% if request.endpoint == 'assistant' %}active{% endif %}">
+
+            <i class="bi bi-robot"></i>
+
+            <span>AI Assistant</span>
+
+        </a>
+
+        <a href="/reports"
+           class="{% if request.endpoint == 'reports' %}active{% endif %}">
+
+            <i class="bi bi-file-earmark-text"></i>
+
+            <span>Reports</span>
+
+        </a>
+
+        <a href="/history"
+           class="{% if request.endpoint == 'history' %}active{% endif %}">
+
+            <i class="bi bi-clock-history"></i>
+
+            <span>Simulation History</span>
+
+        </a>
+
+        <a href="/settings"
+           class="{% if request.endpoint == 'settings' %}active{% endif %}">
+
+            <i class="bi bi-gear"></i>
+
+            <span>Settings</span>
+
+        </a>
+
+    </nav>
+
+    <div class="sidebar-footer">
+
+        <div>Version 1.0.0</div>
+
+        <div class="text-muted mt-1">
+            Honeywell Hackathon
+        </div>
+
+    </div>
+
+</aside>
